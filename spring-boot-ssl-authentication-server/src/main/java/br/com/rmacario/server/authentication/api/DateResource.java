@@ -1,4 +1,4 @@
-package br.com.rmacario.authentication.api;
+package br.com.rmacario.server.authentication.api;
 
 import java.security.Principal;
 import java.util.Calendar;

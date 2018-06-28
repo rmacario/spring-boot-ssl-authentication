@@ -1,4 +1,4 @@
-package br.com.rmacario.authentication.config;
+package br.com.rmacario.server.authentication.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

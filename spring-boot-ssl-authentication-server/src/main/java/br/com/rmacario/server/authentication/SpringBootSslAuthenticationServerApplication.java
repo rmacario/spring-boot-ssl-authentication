@@ -1,4 +1,4 @@
-package br.com.rmacario.authentication;
+package br.com.rmacario.server.authentication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
