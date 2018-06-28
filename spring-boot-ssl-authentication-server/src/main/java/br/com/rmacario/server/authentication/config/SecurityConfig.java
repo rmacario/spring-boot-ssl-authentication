@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 return new User(username, "", AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER_SSL"));
                 
             } else {
-            	throw new UsernameNotFoundException("Usuario nao encontrado");
+            	throw new UsernameNotFoundException("Erro ao validar client.");
             }
         });
     }

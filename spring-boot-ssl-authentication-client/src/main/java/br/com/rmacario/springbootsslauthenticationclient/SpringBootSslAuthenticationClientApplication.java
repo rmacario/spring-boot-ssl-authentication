@@ -1,6 +1,7 @@
 package br.com.rmacario.springbootsslauthenticationclient;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +13,12 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class SpringBootSslAuthenticationClientApplication {
 	
+	@Value("#{environment['adress.server']}")
+	private String serverAdress;
+	
 	@Autowired
 	private RestTemplate restTemplate;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootSslAuthenticationClientApplication.class, args);
@@ -22,7 +27,7 @@ public class SpringBootSslAuthenticationClientApplication {
 	
 	@GetMapping("/")
 	public String getLastDayCurrentMonth() {
-		ResponseEntity<String> response = restTemplate.getForEntity("https://localhost:8443/", String.class);
+		ResponseEntity<String> response = restTemplate.getForEntity(this.serverAdress, String.class);
 		return response.getBody();
 	}
 }
